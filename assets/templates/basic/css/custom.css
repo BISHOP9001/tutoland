@@ -1,0 +1,345 @@
+/* Copy Animation */
+.base-color {
+  color: hsl(var(--main)) !important;
+}
+.copyInput {
+  display: inline-block;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.copied::after {
+  position: absolute;
+  top: 8px;
+  right: 12%;
+  width: 100px;
+  display: block;
+  content: "COPIED";
+  font-size: 1em;
+  padding: 5px 5px;
+  color: #fff;
+  background-color: #ff7000;
+  border-radius: 3px;
+  opacity: 0;
+  will-change: opacity, transform;
+  animation: showcopied 1.5s ease;
+}
+
+@keyframes showcopied {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(40%);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cookies-card {
+  width: 520px;
+  padding: 30px;
+  color: #1e2337;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  z-index: 999999;
+  transition: all 0.5s;
+  background: #d1d1d1;
+  border-radius: 5px;
+}
+
+.cookies-card.hide {
+  bottom: -500px !important;
+}
+.radius--10px {
+  border-radius: 10px;
+}
+
+.cookies-card__icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #6e6f70;
+  color: #fff;
+  font-size: 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cookies-card__content {
+  margin-bottom: 0;
+}
+
+.cookies-btn {
+  color: #363636;
+  text-decoration: none;
+  padding: 10px 35px;
+  margin: 3px 5px;
+  display: inline-block;
+  border-radius: 999px;
+}
+
+.cookies-btn:hover {
+  color: #363636;
+}
+
+@media (max-width: 767px) {
+  .cookies-card {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+.hover-input-popup {
+  position: relative;
+}
+.input-popup {
+  display: none;
+  text-align: left;
+}
+.hover-input-popup .input-popup {
+  display: block;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  width: 280px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.input-popup::after {
+  position: absolute;
+  content: "";
+  bottom: -19px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #1a1a1a transparent;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.input-popup p {
+  padding-left: 28px;
+  position: relative;
+}
+.input-popup p::before {
+  position: absolute;
+  content: "";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  left: 0;
+  top: 4px;
+  line-height: 1;
+  font-size: 18px;
+}
+.input-popup p.error {
+  text-decoration: line-through;
+}
+.input-popup p.error::before {
+  content: "\f057";
+  color: #ea5455;
+}
+.input-popup p.success::before {
+  content: "\f058";
+  color: #28c76f;
+}
+
+.show-filter {
+  display: none;
+}
+@media (max-width: 767px) {
+  .responsive-filter-card {
+    display: none;
+    transition: none;
+  }
+  .show-filter {
+    display: block;
+  }
+}
+
+/* user review page  */
+
+.rating .rating-form-group {
+  position: relative;
+  height: 24px;
+  line-height: 24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.rating .rating-form-group .star-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating .rating-form-group .star-label:last-child {
+  position: static;
+}
+
+.rating .rating-form-group .star-label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating .rating-form-group .star-label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating .rating-form-group .star-label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating .rating-form-group .star-label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating .rating-form-group .star-label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating .rating-form-group .star-label input {
+  display: none;
+}
+
+.rating .rating-form-group .star-label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating .rating-form-group .star-label:last-child .icon {
+  color: #999;
+}
+
+.rating .rating-form-group:not(:hover) label input:checked ~ .icon,
+.rating .rating-form-group:hover label:hover input ~ .icon {
+  color: #ffc363;
+}
+
+.rating .rating-form-group label input:focus:not(:checked) ~ .icon:last-child {
+  color: #e5e5e5;
+  text-shadow: 0 0 5px #ffc363;
+}
+
+.review-input {
+  background: #f8f8f8;
+}
+
+.review-input:focus {
+  border-color: #0068e1;
+}
+
+.review-label {
+  color: #000;
+  text-transform: capitalize;
+}
+
+/* share modal */
+
+.copy-link input {
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  transition: all 0.3s;
+  padding-right: 75px;
+}
+
+.copy-link span {
+  text-align: center;
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.custom-modal__form.share .share-link {
+  width: 35px;
+  height: 35px;
+  color: hsl(var(--white));
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+
+.custom-modal__form.share .share-link:last-of-type {
+  margin-right: 0;
+}
+
+.custom-modal__form.share .share-link.facebook {
+  background: #1877f2;
+}
+
+.custom-modal__form.share .share-link.pinterest {
+  background: #e60023;
+}
+
+.custom-modal__form.share .share-link.linkedin {
+  background: #0077b5;
+}
+
+.custom-modal__form.share .share-link.twitter {
+  background: #1da1f2;
+}
+
+.copy-link span {
+  top: 13px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: hsl(var(--base));
+}
+
+.empty-slip-message {
+  display: grid;
+  place-content: center;
+  color: #cfcfcf;
+  font-size: 0.8754rem;
+  font-family: inherit;
+  height: 160px;
+}
+
+.empty-slip-message img {
+  height: 90px;
+}
+
